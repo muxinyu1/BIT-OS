@@ -1,1 +1,3 @@
-/lab2/linux/target
+/lab2/linux/cmake-build-debug
+/lab2/linux/.idea
+/.vscode
