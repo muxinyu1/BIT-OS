@@ -6,7 +6,7 @@
 
 struct data {
     int writen;
-    char* msg[MAX_LEN];
+    char msg[MAX_LEN];
 };
 
 #endif

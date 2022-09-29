@@ -7,7 +7,7 @@
 int main() {
     int shm_id;
     if ((shm_id = shmget(SHARED_MEM_KEY, sizeof(struct data), IPC_CREAT)) == -1) {
-        sprintf(stderr, "shmget failed.\n");
+        fprintf(stderr, "shmget failed.\n");
         exit(EXIT_FAILURE);
     }
     void* shm_addr;
@@ -17,6 +17,7 @@ int main() {
     }
     struct data* shared_data = (struct data*)shm_addr;
     shared_data->writen = 1;
+    printf("Input msg:\n");
     scanf("%s", shared_data->msg);
     if (shmdt(shm_addr) == -1) {
         fprintf(stderr, "shmdt failed.\n");
