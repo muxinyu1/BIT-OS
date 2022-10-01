@@ -1,0 +1,3 @@
+/home/mxy/GitHub/bit-os/lab2/windows/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/mxy/GitHub/bit-os/lab2/windows/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/mxy/GitHub/bit-os/lab2/windows/cmake-build-debug/CMakeFiles/lab2_windows.dir
