@@ -7,14 +7,31 @@
 #include <array>
 #include "macros.h"
 
+/**
+ * pid进程作为生产者
+ * @param pid 生产者子进程的pid
+ */
 extern void start_producing(pid_t pid);
 
+/**
+ * 初始化信号量: EMPTY, FILLED, RW_MUX
+ */
 extern void init_sig();
 
+/**
+ * 初始化共享内存
+ */
 extern void init_shm();
 
+/**
+ * pid进程作为消费者
+ * @param pid 消费者子进程的pid
+ */
 extern void start_consuming(pid_t pid);
 
+/**
+ * 删除共享内存
+ */
 extern void del_shm();
 
 

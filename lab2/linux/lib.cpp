@@ -13,10 +13,22 @@ void start_producing(pid_t pid);
 void start_consuming(pid_t pid);
 void del_shm();
 void init_sig();
+/**
+ * attach buffer_ptr到当前进程PCB
+ */
 void attach_shm();
+/**
+ * 从当前进程detach buffer_ptr
+ */
 void detach_shm();
 void init_shm();
+/**
+ * @return 进程sleep的时间[MIN_SECONDS, MAX_SECONDS]
+ */
 int create_random_sleep_time();
+/**
+ * @return 向缓冲区写的数[MIN_WRITTEN_NUM, MAX_WRITTEN_NUM]
+ */
 int create_random_written_num();
 
 int shm_id;
@@ -40,7 +52,7 @@ void start_consuming(pid_t pid) {
     attach_shm();
     for (int i = 0; i < CONSUMING_TIMES; ++i) {
         sleep(create_random_sleep_time());
-        printf("#%X Reads %d\n", pid, buffer_ptr->read());
+        printf("#%X Reads %d\n", getpid(), buffer_ptr->read());
     }
     detach_shm();
 }
